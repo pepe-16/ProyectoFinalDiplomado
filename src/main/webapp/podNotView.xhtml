@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>Listado Poderes Notariales</h:head>
+
+<body>
+	<style type="text/css">
+button.ui-button {
+	margin-right: .8rem;
+}
+</style>
+	<p:button value="Agregar" styleClass="ui-button-raised"
+		action="podNotNew" />
+	<p:dataTable value="#{cargaCapturaProto}" var="capturaproto"
+		paginator="true" rows="10">
+		<p:column>
+			<f:facet name="header">Num.Control</f:facet>    				
+             #{capturaproto.numControlPro}
+        </p:column>
+
+		<p:column>
+			<f:facet name="header">Fecha Exp</f:facet>    				
+             #{capturaproto.fecExpPro}
+        </p:column>
+
+		<p:column>
+			<f:facet name="header">Num.Instru</f:facet>    				
+             #{capturaproto.numInstruPro}
+        </p:column>
+
+		<p:column>
+			<f:facet name="header">Num.Notario</f:facet>    				
+             #{capturaproto.numNotarioPro}
+        </p:column>
+
+		<p:column>
+			<f:facet name="header">Notario</f:facet>    				
+             #{capturaproto.notarioPro}
+        </p:column>
+
+		<p:column>
+			<f:facet name="header">Ruta pdf</f:facet>    				
+             #{capturaproto.rutapdfPro}
+        </p:column>
+
+		<p:column>
+			<f:facet name="header">Otorgante</f:facet>    				
+             #{capturaproto.otorgantePro}
+        </p:column>
+
+		<p:column>
+			<f:facet name="header">Tipo de archivo</f:facet>    				
+             #{capturaproto.caseFile.caseFile}
+        </p:column>
+
+		<p:column>
+			<f:facet name="header">Entidad</f:facet>    				
+             #{capturaproto.entidad.entity}
+        </p:column>
+
+		<p:column>
+			<f:facet name="header">Cargo</f:facet>    				
+             #{capturaproto.cargo.cargo}
+        </p:column>
+		<p:column headerText="Actions">
+			<h:panelGroup layout="span">
+				<p:button icon="pi pi-bookmark"
+					styleClass="rounded-button ui-button-secondary ui-button-outlined"
+					action="#{SicoponEJB.eliminaCapturaProtos()}" />
+				<p:button icon="pi pi-times"
+					styleClass="rounded-button ui-button-danger ui-button-outlined"
+					action="#{SicoponEJB.eliminaCapturaProtos()}" />
+			</h:panelGroup>
+		</p:column>
+	</p:dataTable>
+
+</body>
+</html>

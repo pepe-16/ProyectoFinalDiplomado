@@ -1,0 +1,278 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+	<title>SicoponSystem</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<meta http-equiv="Content-type"
+		content="width=device-width, initial-scale=1" name="viewport" />
+
+	<!-- Librería para las fechas -->
+	<link rel="stylesheet" type="text/css"
+		href="webroot/css/datepicker.css" />
+	<!-- NavBar -->
+	<link rel="stylesheet" type="text/css"
+		href="webroot/css/navBar/navBar.min.css" />
+	<link rel="stylesheet" type="text/css"
+		href="webroot/css/navBar/grid.min.css" />
+
+	<script type="text/javascript"
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Librería Íconos-->
+	<link rel="stylesheet" type="text/css"
+		href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css"
+		href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+
+	<!---Librería para alertify -->
+	<link rel="stylesheet" type="text/css" href="webroot/css/alertify.css" />
+	<link rel="stylesheet" type="text/css" href="webroot/css/default.css" />
+
+	<!-- Librería para FontAwesome -->
+	<script type="text/javascript"
+		src="https://kit.fontawesome.com/a456611292.js"></script>
+
+	<!-- Librerías para Alertify -->
+	<script type="text/javascript" src="webroot/js/alertify.js"></script>
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="webroot/js/datepicker.js"></script>
+	<script type="text/javascript" src="webroot/js/main.js"></script>
+	<link rel="stylesheet" type="text/css"
+		href="webroot/css/gestion_style.css" />
+
+
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
+	<script type="text/javascript" src="webroot/js/navBar/navBar.min.js"></script>
+
+	<style>
+.nuevo-titulo {
+	color: #FFD700;
+	padding: 0.05em 0.05em;
+	font-size: 18px;
+	font-family: 'Raleway', sans-serif;
+}
+
+.sistema {
+	color: #FFFFFF;
+	padding: 0.1em 0.1em;
+	font-size: 16px;
+	font-family: 'Raleway', sans-serif;
+}
+
+td {
+	color: #555;
+}
+
+.img-pdf {
+	width: 30px;
+}
+
+.table {
+	font-size: 13px;
+}
+
+.table-wrapper {
+	background: #fff;
+	padding: 0px 15px 0px;
+	border-radius: none;
+	box-shadow: none;
+}
+
+.btnt {
+	background-color: transparent;
+	border-color: transparent;
+}
+
+@media ( min-width : 768px) {
+	.modal-dialog {
+		width: 60%;
+	}
+}
+</style>
+</h:head>
+<h:body>
+	<header id="megamenu">
+	<div class="container">
+		<div class="header-wrapper wrapper">
+			<nav class="megamenu" color="primary" animation="yes"
+				sticky-top="yes">
+			<div class="megamenu-header">
+				<div class="hamburger" hamburger="1" data-toggle="collapse"
+					data-target=".collapse">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
+				<a><span class="sistema">&nbsp;&nbsp;&nbsp;&nbsp;Sistema
+						de</span><span class="nuevo-titulo"> Control de Poderes Notariales</span></a>
+				<a href="https://www.unam.mx" target="_blank"
+					class="header__logo-image"><img
+					src="https://www.unam.mx/sites/all/themes/unam/logo.png" alt="UNAM"
+					height="51px" /></a> <a href="http://www.abogadogeneral.unam.mx"
+					target="_blank" class="header__logo-image"><img
+					src="webroot//images/abogacia.png" alt="OAG" height="45px" /></a> <a
+					href="http://www.dgelu.unam.mx/" target="_blank"
+					class="header__logo-image"><img
+					src="webroot//images/logo_dgelu.png" alt="DGELU" height="51px" /></a>
+			</div>
+			<div class="collapse megamenu-collapse">
+				<ul class="nav megamenu-nav megamenu-right">
+					<li class="dropdown"><a class="dropdown-toggle">Sicopon </a>
+						<ul class="dropdown-menu">
+							<li class="dropdown-submenu"><a href="#">Captura</a>
+								<ul class="dropdown-menu">
+									<li><h:form>
+											<h:commandButton value="Poderes Notariales"
+												action="#{agendaBean.gotoCapturaPoderes}" />
+										</h:form></li>
+									<li><h:form>
+											<h:commandButton value="Protocolizaci&#243;n"
+												action="#{agendaBean.gotoCapturaProtos}" />
+										</h:form></li>
+								</ul></li>
+							<li class="dropdown-submenu"><a href="#">Consulta</a>
+								<ul class="dropdown-menu">
+									<li><a href="consultaPoder.php">Apoderados</a></li>
+									<li><a href="consultaProto.php">Funcionarios</a></li>
+								</ul></li>
+							<li class="dropdown-submenu"><a href="#">Altas</a>
+								<ul class="dropdown-menu">
+									<li><a href="altasDependencia.php">Dependencias</a></li>
+								</ul></li>
+						</ul></li>
+					<!-- <li>
+                                <a href="http://132.248.177.246/sicopon/src/Model/login/login_close_model.php"><i class="fas fa-door-open" aria-hidden="true"></i>&nbsp;&nbsp;Salir</a>
+                            </li> -->
+				</ul>
+			</div>
+			</nav>
+		</div>
+	</div>
+	</header>
+
+	<nav aria-label="breadcrumb">
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item">Sicopon</li>
+		<li class="breadcrumb-item">Captura</li>
+		<li class="breadcrumb-item active" aria-current="page">Poderes
+			Notariales</li>
+	</ol>
+	</nav>
+
+	<div id="fix2">
+		<div class="container">
+			<div class="card mt-2">
+				<div class="card-header">
+					<strong>Lista de poderes notariales</strong>
+				</div>
+				<div class="prl-25">
+					<div class="border bt-0 mt-2 mb-2">
+						<div class="col-12 bg-aqua text-white">
+							<p class="mb-0 text-uppercase">
+								<strong>Poderes notariales</strong>
+							</p>
+						</div>
+						<div class="form-group mt-15">
+							<div class="col-12" style="text-align: right;">
+								<button style="margin-right: 15px" type="button"
+									class="usuario btn-sm" id="add_user_poder"
+									name="add_user_poder" data-toggle="modal"
+									data-target="#dataModalUsuarioPoder">
+									<i class="fas fa-user-plus fa-lg"></i>&nbsp;&nbsp;Agregar
+									usuario
+								</button>
+								<button type="button" class="poder btn-sm" id="add_poder"
+									name="add_poder" data-toggle="modal"
+									data-target="#dataModalPoder">
+									<span class="glyphicon glyphicon-plus"></span> Agregar nuevo
+									poder
+								</button>
+							</div>
+						</div>
+						<p:dataTable value="#{cargaCapturaPoderes}" var="capturapoder" id ="capturapoder"
+							paginator="true" rows="10">
+							<p:column>
+								<f:facet name="header">
+									<div align="center">
+										<h:outputText value="N&#250;m.ID" />
+									</div>
+								</f:facet>    				
+					             #{capturapoder.idCapturaPod}
+					        </p:column>
+							<p:column>
+								<f:facet name="header">
+									<div align="center">
+										<h:outputText value="N&#250;m.Control" />
+									</div>
+								</f:facet>    				
+					             #{capturapoder.numControlPod}
+					        </p:column>
+
+							<p:column>
+								<f:facet name="header">
+									<div align="center">
+										<h:outputText value="N&#250;m.Instrumento" />
+									</div>
+								</f:facet>    				
+					             #{capturapoder.numInstruPod}
+					        </p:column>
+
+							<p:column>
+								<f:facet name="header">
+									<div align="center">
+										<h:outputText value="Notario" />
+									</div>
+								</f:facet>    				
+					             #{capturapoder.notarioPod}
+					        </p:column>
+
+							<p:column>
+								<f:facet name="header">
+									<div align="center">
+										<h:outputText value="Poderdante" />
+									</div>
+								</f:facet>    				
+					             #{capturapoder.representantePod}
+					        </p:column>
+
+							<p:column>
+								<f:facet name="header">
+									<div align="center">
+										<h:outputText value="Cargo" />
+									</div>
+								</f:facet>    				
+					             #{capturapoder.cargoPod.cargo}
+					        </p:column>
+
+							<p:column>
+
+								<h:form>
+									<p:commandLink id="ajax" value="ELIMINAR"
+										action="#{capturaPoderesBean.eliminaCapturaPoderes}" value="#{capturapoder.idCapturaPod}">
+										
+								
+									</p:commandLink>
+								</h:form>
+							</p:column>
+						</p:dataTable>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</h:body>
+
+</html>
